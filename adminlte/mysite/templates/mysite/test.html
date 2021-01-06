@@ -1,0 +1,35 @@
+<form method='post' style="margin-top: 10px;">
+    {% csrf_token %}
+    <div class="row">
+      <div class="card card-primary card-outline col-12">
+        <div class="card-header">
+          <h5 class="m-0" style="text-align: center;">Choix de la formation</h5>
+        </div>
+        <div class="card-body">
+          <div class="col-4">
+            {{ form_session.start_date | as_crispy_field }}
+          </div>
+          <div class="col-4">
+            {{ form_session.end_date | as_crispy_field }}
+          </div>
+          <div class="col-6" style="display: inline-block;">
+            {{ form_session.start_hours | as_crispy_field }}
+          </div>
+          <div class="col-6">
+            {{ form_session.end_hours | as_crispy_field }}
+          </div>
+          <div class="col-6">
+            {{ form_session.lieu | as_crispy_field }}
+          </div>
+          <div class="col-6">
+            {{ form_session.capacity | as_crispy_field }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- {{ form | crispy }} -->
+    <button class="btn btn-primary" type="submit" style="display:block; margin: auto;color: #ffffff;
+    background-color: #FF7F00;
+    border-color: #FF7F00;
+    box-shadow: none;">Enregistrer</button>
+</form>
